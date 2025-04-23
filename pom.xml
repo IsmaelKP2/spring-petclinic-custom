@@ -38,6 +38,12 @@
     <nohttp-checkstyle.version>0.0.11</nohttp-checkstyle.version>
     <spring-format.version>0.0.43</spring-format.version>
 
+    <!-- otel dependencies -->
+    <maven.compiler.release>17</maven.compiler.release>
+    <otel.traces.api.version>1.48.0</otel.traces.api.version>
+    <otel.metrics.api.version>1.48.0</otel.metrics.api.version>
+    <otel.metrics.exporter>console</otel.metrics.exporter>
+
   </properties>
 
   <dependencies>
@@ -151,6 +157,129 @@
       <groupId>jakarta.xml.bind</groupId>
       <artifactId>jakarta.xml.bind-api</artifactId>
     </dependency>
+
+
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-context</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-opentracing-shim</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-api</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-common</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-logging</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-logging-otlp</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-zipkin</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-extension-kotlin</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-extension-trace-propagators</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk-common</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk-logs</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk-metrics</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk-testing</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk-trace</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk-extension-autoconfigure</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk-extension-autoconfigure-spi</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-sdk-extension-jaeger-remote-sampler</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-otlp</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-otlp-common</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-sender-grpc-managed-channel</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-sender-jdk</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+    <dependency>
+    <groupId>io.opentelemetry</groupId>
+    <artifactId>opentelemetry-exporter-sender-okhttp</artifactId>
+    <version>1.48.0</version>
+    </dependency>
+      <dependency>
+        <groupId>io.opentelemetry.instrumentation</groupId>
+        <artifactId>opentelemetry-instrumentation-annotations</artifactId>
+        <version>2.14.0</version>
+      </dependency>
+
 
   </dependencies>
 

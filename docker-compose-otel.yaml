@@ -1,0 +1,43 @@
+
+services:
+  petclinic:
+    build: .
+    image: petclinic:latest
+    container_name: petclinic
+    hostname: petclinic
+    depends_on: [otelcollector]
+    ports:
+      - "8080:8080"
+    environment:
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_METRICS_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcollector:4318
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=petclinic,service.version=1.0,deployment.environment=production
+      - OTEL_LOGS_EXPORTER=none
+    healthcheck:
+      interval: 5s
+      retries: 10
+      test: curl --write-out 'HTTP %{http_code}' --fail --silent --output /dev/null http://localhost:8080/vets.html
+
+  #OpenTelemetry Collector
+  otelcollector:
+    image:  quay.io/signalfx/splunk-otel-collector:latest-arm64
+    container_name: otelcollector-container
+    command: ["--config=/etc/otel-collector-config.yml", "--set=service.telemetry.logs.level=debug"]
+    env_file: ".env"
+    volumes:
+      - ./otel-collector-config.yml:/etc/otel-collector-config.yml
+    ports:
+    - 4317:4317
+    - 4318:4318
+    - 13133:13133
+    - 1888:1888
+    - 55679:55679
+    #pull_policy: always
+
+ 
+networks:
+  default:
+    name: mynetwork
+    external: false
+

@@ -1,0 +1,27 @@
+# meter_provider:
+#   readers:
+#     - periodic:
+#       interval: 5000
+#       exporter:
+#         debug:
+#           verbosity: normal
+#   views:
+#     - selector:
+#       instrument_name: queueSize
+#       stream:
+#         aggregation:
+#           drop:
+
+- selector:
+    instrument_name: queueSize 
+    instrument_type: LONG_GAUGE
+    instrument_unit: 1
+    meter_name: io.opentelemetry.sdk.logs
+    meter_version: null
+    meter_schema_url: null
+  view:
+    name: new.io.opentelemetry.sdk.logs
+    description: drop-aggregation
+    aggregation: drop
+
+
